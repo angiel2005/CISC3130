@@ -1,13 +1,17 @@
-package day1.genericLab;
+public class Pokemon {
+    private String name;
+    private String type;
 
-public class main {
-    public static void main(String [] args){
+    public Pokemon(String name, String type) {
+        this.name = name;
+        this.type = type;
+    }
 
-        pokemon pikachu = new pokemon("Pikachu", "Electric");
-        pokemon charmander = new pokemon("Charmander", "Fire");
-        
-        System.out.println(pikachu);
-        System.out.println(charmander);
-        
+    public String getName() { return name; }
+    public String getType() { return type; }
+
+    @Override
+    public String toString() {
+        return name + " (" + type + ")";
     }
 }
