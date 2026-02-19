@@ -24,5 +24,17 @@ public class Main {
         BattlePokemon squirtle = new BattlePokemon("Squirtle", "Water", 60);
         PokemonOnlyBox<BattlePokemon> battleBox = new PokemonOnlyBox<>(squirtle);
         System.out.println(battleBox.get());
+
+        public static <T> void swap(Box<T> a, Box<T> b) {
+            T temp = a.get();
+            a.set(b.get());
+            b.set(temp);
+        }
+
+        Box<String> a = new Box<>("Potion");
+        Box<String> b = new Box<>("Rare Candy");
+        System.out.println("Before swap: a=" + a.get() + ", b=" + b.get());
+        swap(a, b);
+        System.out.println("After swap:  a=" + a.get() + ", b=" + b.get());
     }
 }
